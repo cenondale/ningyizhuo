@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
 <body>
-<nav><a href="<?= base_url('/') ?>">Welcome</a> | <a href="<?= base_url('tasks') ?>">Task List</a> | <a href="<?= base_url('profile') ?>">Profile</a> | <a href="<?= base_url('about') ?>">About</a></nav>
-<h1>About the System</h1>
-<p>Tasks for Today Management System was developed by Cenon Dale Macaraeg using CodeIgniter 4 and MySQL.</p>
-</body></html>
+
+<nav>
+    <a href="<?= base_url('/') ?>">Welcome</a> |
+    <a href="<?= base_url('tasks') ?>">Task List</a> |
+    <a href="<?= base_url('profile') ?>">Profile</a> |
+    <a href="<?= base_url('about') ?>">About</a>
+</nav>
+
+<h1>Demo User Profile</h1>
+
+<?php if ($user): ?>
+
+    <p><strong>Username:</strong> <?= esc($user['username']) ?></p>
+    <p><strong>Full Name:</strong> <?= esc($user['full_name']) ?></p>
+    <p><strong>Email:</strong> <?= esc($user['email']) ?></p>
+    <p><strong>Created At:</strong> <?= esc($user['created_at']) ?></p>
+
+<?php else: ?>
+
+    <p>No user record found.</p>
+
+<?php endif; ?>
+
+</body>
+</html>
